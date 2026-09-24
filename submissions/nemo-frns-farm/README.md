@@ -16,7 +16,7 @@ An online, endless, risk-to-earn pixel island life sim. Your Rare Friend washes 
 You play as your own verified Generations NFT, rendered from its canonical on-chain sprite as the hero and never recolored. Its family (9 families) sets a unique play-style trait and the destination of its Homeland Voyage, and it earns a new hat and title every 10 levels. $RAREFRIENDS is the premium token: it is paired with the in-game $SHELL in a constant-product pool, and every RF sink splits 70% Season Pool, 25% creator and 5% burned.
 
 **Source code**
-[GitHub repository](https://github.com/shukla1243/nemo-frns-farm/tree/3eec76fdb90723a9f0a1237f2a46588b367e621b) · Uses FriendSDK v0.1.2 modules (wallet session, owned-Friend discovery, `readGenerationEligibility`, canonical sprites, sound kit) in a standalone Vite + React + TypeScript app. The SDK sandbox is not used, so the game can keep real saves and reach Nostr relays and WebRTC peers for multiplayer.
+[GitHub repository](https://github.com/shukla1243/nemo-frns-farm/tree/ee7e922dd9eb42bc59aa65d4a93cc11b1498abdd) · Uses FriendSDK v0.1.2 modules (wallet session, owned-Friend discovery, `readGenerationEligibility`, canonical sprites, sound kit) in a standalone Vite + React + TypeScript app. The SDK sandbox is not used, so the game can keep real saves and reach Nostr relays and WebRTC peers for multiplayer.
 
 **Playable demo / how to run**
 Public preview: **https://shukla1243.github.io/nemo-frns-farm/** (desktop and phone)
@@ -33,7 +33,7 @@ npm run dev
 ```
 
 **How do you play?**
-Tap or click to walk (WASD / arrows on desktop), press **E** or the orange button near a building, and open the map to fast travel. Everyone spawns into one shared island world. The orange **Play** button lists every game and place with a Go button, and the story note shows your next goal: 15 chapters in Act I, 12 in Act II, and an Act III that never ends. Survive: hunger drains (tap the hunger bar to eat), energy powers every action, and you sleep at home. Earn by chopping, quarrying, farming, fishing, quests and daily gifts from 8 islanders. Risk it all in the Abyss Dive (crash), Tide Mines (minesweeper), double-or-nothing flips, raids on real players, the shared Kraken world boss and the Tide Wheel. Send your Friend on timed voyages (15 min, 1 h, 6 h, 12 h) with low odds and big upside. Grow by ascending (odds-based level-ups), forging gear +1 to +10, building from a Tent to a Sea Castle, unlocking 7 regions, and rebirthing at level 30 for permanent bonuses. Milestones and daily streaks pay out automatically.
+Tap or click to walk (WASD / arrows on desktop), press **E** or the orange button near a building, and open the map to fast travel. Everyone spawns into one shared island world. The orange **Play** button lists every game and place with a Go button, and the story note shows your next goal: 15 chapters in Act I, 12 in Act II, and an Act III that never ends. Survive: hunger drains (tap the hunger bar to eat), energy powers every action, and you sleep at home. Earn by chopping, quarrying, farming, fishing, playing Crab Dash (a skill arcade with no stake), quests and daily gifts from 8 islanders. Risk it all in the Abyss Dive (crash), Tide Mines (minesweeper), double-or-nothing flips, raids on real players, the shared Kraken world boss and the Tide Wheel. Send your Friend on timed voyages (15 min, 1 h, 6 h, 12 h) with low odds and big upside. Grow by ascending (odds-based level-ups), forging gear +1 to +10, building from a Tent to a Sea Castle, unlocking 7 regions, and rebirthing at level 30 for permanent bonuses. Milestones, daily streaks and a free weekly Season Journey pay out for everyone, not just the top 10. A gold arrow and a Go button always point to the next story goal, and a Welcome back report lists everything ready after a break.
 
 **Costs and rewards**
 Everything is simulated. You start with 20 RF and 120 SHELL.
@@ -47,6 +47,8 @@ Everything is simulated. You start with 20 RF and 120 SHELL.
 - **Kraken:** 30 RF pool split by damage share every 20 minutes.
 - **Voyages:** Homeland 0.5 RF (10% relic, 5% RF cache), Reef Run 2 RF (30% stock-token shares, 2% a full NVDA share), Trench 4 RF (14% hoard of 8 to 24 RF, 8% lost at sea). Outcomes are rolled at departure, and RF voyages are net RF-negative even at max bonus (tested).
 - **Stock tokens:** simulated, deterministic hourly price, 2% sell fee, game collectibles only.
+- **Crab Dash:** 6 energy per round, 3 SHELL per point, never RF.
+- **Season Journey:** 10 free tiers per week, mostly SHELL and items, 3 RF in total.
 - **Tide Pool swaps:** 3% fee.
 - **Sinks:** ascension, forge, homes, land, farm plots, charms, scrolls, voyages, rebirth, paid spins, lost RF stakes and swap fees all split 70% Season Pool (top 10 split 30/20/12/8/6/5/5/5/5/4%), 25% creator, 5% burned.
 
@@ -54,7 +56,7 @@ Kept items have no expiry. [Full odds, costs and tokenomics](https://github.com/
 
 **What have you tested?**
 - TypeScript strict typecheck and production build pass.
-- 61 unit tests pass. They cover engine rules, the RTP of every chance game, AMM invariants, the 70/25/5 sink split, season rollover and claims, islander gifts, the endless story, milestones, rebirth, the daily streak, voyages (fixed outcomes, recall, odds, net RF-negative EV, stock sales), save codes, map reachability for every station, and Monte Carlo economy bots. The bots are net RF sinks: grinders spend about 114 to 151 RF against about 20 to 27 RF won in 4 h.
+- 76 unit tests pass. They cover engine rules, the RTP of every chance game, AMM invariants, the 70/25/5 sink split, season rollover and claims, islander gifts, the endless story, milestones, rebirth, the daily streak, voyages (fixed outcomes, recall, odds, net RF-negative EV, stock sales), Crab Dash, the Season Journey, the story guide, the no-food safety net, save codes, map reachability for every station, and Monte Carlo economy bots. The bots are net RF sinks: grinders spend about 114 to 151 RF against about 20 to 27 RF won in 4 h.
 - Playwright checks pass on desktop (1280×800) and phone (390×844). They cover the guest flow, story, fast travel, chop plus autosave, all panels fitting the screen (Play hub, notifications, settings, guide), farm, swap, wheel, fishing and NPC gifts, with zero page errors. `knip` reports no dead code.
 - The wallet/eligibility gate uses the FriendSDK functions directly. A full real-wallet playthrough with a Gen 1+ Friend is still to be done by a holder.
 
