@@ -1,5 +1,18 @@
 # NEMO FRNS FARM
 
+## Update, October 2026: ready to publish on rarefriends.com (FriendSDK 1.0)
+
+NEMO FRNS FARM now has a **FriendSDK 1.0** build, published as game id `nemo-farm`:
+
+- **Repo:** https://github.com/shukla1243/nemo-farm (branch `main`, `friendsdk.json` at the root)
+- **Version 0.1.0:** a coming-soon screen. The player's own Friend waits on the island dock, drawn from `game.art`, with a "Follow updates on X" link. No actions, items or server rules, so no contracts and no deployment record (`record: null`). Publishing steps are in [HANDOFF.md](https://github.com/shukla1243/nemo-farm/blob/main/HANDOFF.md).
+- **SDK:** `github:rarefriends/friendsdk#c19058711f3c207c67cd30b8136de89978f08ddd`. `npx friendsdk check` and `npx friendsdk build` both pass.
+- **Next:** the full game ships later in the same repo as `nemo-farm` 1.0.0, with server-side saves, Depth Ladder charters on the deployed DrawModule, redeemable chests, weekly leaderboards and shared-world multiplayer. Its `contract-request.json` comes with that release.
+
+Please publish 0.1.0 so players can find the island while the full game is finished.
+
+---
+
 **Project name**
 NEMO FRNS FARM
 
