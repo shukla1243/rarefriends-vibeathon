@@ -2,14 +2,14 @@
 
 ## Update, October 2026: ready to publish on rarefriends.com (FriendSDK 1.0)
 
-NEMO FRNS FARM now has a **FriendSDK 1.0** build, published as game id `nemo-farm`:
+NEMO FRNS FARM is now a **FriendSDK 1.0** game, game id `nemo-farm`, in this submission's repo:
 
-- **Repo:** https://github.com/shukla1243/nemo-farm (branch `main`, `friendsdk.json` at the root)
-- **Version 0.1.0:** a coming-soon screen. The player's own Friend waits on the island dock, drawn from `game.art`, with a "Follow updates on X" link. No actions, items or server rules, so no contracts and no deployment record (`record: null`). Publishing steps are in [HANDOFF.md](https://github.com/shukla1243/nemo-farm/blob/main/HANDOFF.md).
-- **SDK:** `github:rarefriends/friendsdk#c19058711f3c207c67cd30b8136de89978f08ddd`. `npx friendsdk check` and `npx friendsdk build` both pass.
-- **Next:** the full game ships later in the same repo as `nemo-farm` 1.0.0, with server-side saves, Depth Ladder charters on the deployed DrawModule, redeemable chests, weekly leaderboards and shared-world multiplayer. Its `contract-request.json` comes with that release.
+- **Repo:** https://github.com/shukla1243/nemo-frns-farm (branch `main`, `friendsdk.json` at the root). The original vibeathon build is kept on branch `v1`.
+- **Version 0.1.0:** the full island game, SHELL only. Website sign-in through `connect()`, server-side islands (`defineGame`: `load`, `act`, `sync`, `prefs`), the Friend drawn from `game.art`, family traits from `ctx.friend.family`. No paid actions, items or deployment record, so it needs no contracts. `npx friendsdk check` and `npx friendsdk build` pass, with 161 tests.
+- **SDK:** `github:rarefriends/friendsdk#c19058711f3c207c67cd30b8136de89978f08ddd`.
+- **Next:** 1.0.0 adds the paid actions on the deployed DrawModule, with its `contract-request.json`.
 
-Please publish 0.1.0 so players can find the island while the full game is finished.
+Please add it to the arcade (under maintenance is fine) while we finish 1.0.0.
 
 ---
 
